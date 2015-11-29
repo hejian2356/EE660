@@ -38,7 +38,7 @@ else
     end
 end
  X=(train_patterns .* (ones(Dim,1)*weights)) * train_patterns';
- epsilon=1e-8;
+ epsilon=1e-5;
 w               = ( inv(X+epsilon*eye(Dim))*(train_patterns .* (ones(Dim,1)*weights)) * train_targets')';
 test_targets    = w * test_patterns;
 
