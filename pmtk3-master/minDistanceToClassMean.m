@@ -1,4 +1,3 @@
-clc;
 class0 = trainX(trainY == 0, :);
 class1 = trainX(trainY == 1, :);
 mean_0 = mean(class0);
