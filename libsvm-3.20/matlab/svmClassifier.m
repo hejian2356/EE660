@@ -19,16 +19,16 @@ model = svmtrain(svmTrainY, trainX, '-t 0');
 [predicted_label, accuracy, decision_values] = svmpredict(svmTestY, testX, model);
  
 % radial basis, gamma = 10
-model = svmtrain(svmTrainY, trainX, '-t 2, -g 3');
+model = svmtrain(svmTrainY, trainX, '-t 2, -g 0.01');
 [predicted_label, accuracy, decision_values] = svmpredict(svmTestY, testX, model);
  
-model = svmtrain(svmTrainY, trainX, '-t 2, -g 10');
+model = svmtrain(svmTrainY, trainX, '-t 2, -g 0.1');
 [predicted_label, accuracy, decision_values] = svmpredict(svmTestY, testX, model);
  
-model = svmtrain(svmTrainY, trainX, '-t 2, -g 50');
+model = svmtrain(svmTrainY, trainX, '-t 2, -g 0.3');
 [predicted_label, accuracy, decision_values] = svmpredict(svmTestY, testX, model);
  
-model = svmtrain(svmTrainY, trainX, '-t 2, -g 500');
+model = svmtrain(svmTrainY, trainX, '-t 2, -g 1');
 [predicted_label, accuracy, decision_values] = svmpredict(svmTestY, testX, model);
 
 %do normalization
@@ -40,14 +40,14 @@ model = svmtrain(svmTrainY, normalizeTrainX, '-t 0');
 [predicted_label, accuracy, decision_values] = svmpredict(svmTestY, normalizeTestX, model);
  
 % radial basis, gamma = 10
-model = svmtrain(svmTrainY, normalizeTrainX, '-t 2, -g 3');
+model = svmtrain(svmTrainY, normalizeTrainX, '-t 2, -g 0.01');
 [predicted_label, accuracy, decision_values] = svmpredict(svmTestY, normalizeTestX, model);
  
-model = svmtrain(svmTrainY, normalizeTrainX, '-t 2, -g 10');
+model = svmtrain(svmTrainY, normalizeTrainX, '-t 2, -g 0.1');
 [predicted_label, accuracy, decision_values] = svmpredict(svmTestY, normalizeTestX, model);
  
-model = svmtrain(svmTrainY, normalizeTrainX, '-t 2, -g 50');
+model = svmtrain(svmTrainY, normalizeTrainX, '-t 2, -g 0.3');
 [predicted_label, accuracy, decision_values] = svmpredict(svmTestY, normalizeTestX, model);
  
-model = svmtrain(svmTrainY, normalizeTrainX, '-t 2, -g 500');
+model = svmtrain(svmTrainY, normalizeTrainX, '-t 2, -g 1');
 [predicted_label, accuracy, decision_values] = svmpredict(svmTestY, normalizeTestX, model);
