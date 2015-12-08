@@ -47,10 +47,19 @@ for d in depth:
 '''
 RandomForestClassifier
 '''
-n_candidate = [3, 5, 10, 13, 15, 17, 20, 30, 40]
+n_candidate = [3, 5, 20, 40, 60, 100]
 for n in n_candidate:
 	model = RandomForestClassifier(n_estimators=n, max_depth=None)
 	model.fit (X_train, y_train)
 	yhat_test = model.predict(X_test)
 	score = model.score(X_test, y_test)
 	print (">> Random forest accuracy is %.4f with tree number = %d" % (score, n))
+
+depth_rf = [5, 10, 20, 50, 100]
+print ("Fix tree number as 40")
+for d in depth_rf:
+	model = RandomForestClassifier(n_estimators=40, max_depth=d)
+	model.fit (X_train, y_train)
+	yhat_test = model.predict(X_test)
+	score = model.score(X_test, y_test)
+	print (">> Random forest accuracy is %.4f with max_depth = %d" % (score, d))
