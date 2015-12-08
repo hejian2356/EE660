@@ -5,4 +5,4 @@ if sampleWithClass0 > sampleWithClass1
 else
     rightRate = sum(testY == 1)/length(testY);
 end
-fprintf('right rate of guessWithLargerPriorProbClassifier on test data is: %f\n', rightRate);
+fprintf('right rate on test data is: %f\n', rightRate);
